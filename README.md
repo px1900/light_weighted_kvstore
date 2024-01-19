@@ -6,8 +6,7 @@ This KV-store is specially implemented as Cloud-Native database's storage engine
 
 ## Architecture
 <img src="docs/light-kv-architecture.png"
-     alt="Markdown Monster icon"
-     style="float: left; center: 10px;" width="600" />
+      width="600" />
 
 
 This KV-store has three layers. 
