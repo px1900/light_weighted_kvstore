@@ -64,9 +64,12 @@ void DiskManager::GetPage(long long offset, char* pageContent) {
     long long pageIndex = (offset % (PAGE_SIZE * MAX_PAGE_PER_FILE)) / PAGE_SIZE;
     // The file name format is "kvdata/file_0", "kvdata/file_1", "kvdata/file_2", ...
     std::string fileName = "kvdata/file_" + std::to_string(fileIndex);
-    // Open the file, using assert to check whether the file exists
-    FILE* file = fopen(fileName.c_str(), "r");
-    assert(file != NULL);
+
+    // Open the file, if not exists, create a new file
+    FILE* file = fopen(fileName.c_str(), "a+");
+    // Chech whether the file exists, if not exist, create a new one
+    assert(file != nullptr);
+
     // Read the page from the file
     fseek(file, pageIndex * PAGE_SIZE, SEEK_SET);
     fread(pageContent, PAGE_SIZE, 1, file);

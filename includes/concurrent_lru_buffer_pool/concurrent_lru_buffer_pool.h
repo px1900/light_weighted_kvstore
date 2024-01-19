@@ -9,8 +9,8 @@
 #include "lru_node.h"
 #include "../disk_manager/disk_manager.h"
 
-// Default buffer pool size is 16MB
-#define DEFAULT_BUFFER_POOL_SLOTS (16*1024/8)
+// Default buffer pool size is 16GB
+#define DEFAULT_BUFFER_POOL_SLOTS (16*1024*1024/8)
 
 class ConcurrentLruBufferPool {
 
